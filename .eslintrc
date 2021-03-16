@@ -37,8 +37,4 @@
     "react",
     "react-hooks"
   ],
-  "prettier/prettier": ["error", {
-    "endOfLine":"auto"
-    }
-  ]
 }
