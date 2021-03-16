@@ -1,5 +1,6 @@
 {
   "API_URL": "https://api.hackthenorth.com/v3/",
+  "API_REQUEST_TIMEOUT": 3000,
   "USER_FIRSTNAME": "Daniel",
   "USER_LASTNAME": "Araujo",
   "USER_EMAIL": "challenge@hackthenorth.com",
