@@ -16,6 +16,6 @@ export const Default = (): React.ReactElement => (
 );
 
 /**
- * @returns with no profile picture
+ * @returns the no picture storybook
  */
-export const NoProfilePic = (): React.ReactElement => <ProfilePic />;
+export const NoPicture = (): React.ReactElement => <ProfilePic />;
