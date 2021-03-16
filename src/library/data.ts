@@ -262,8 +262,8 @@ export const events = [
 
 export const event = events[0];
 
-export const techtalk = events[0];
+export const techtalk = events[1];
 
-export const workshop = events[4];
+export const workshop = events[0];
 
 export const activity = events[14];

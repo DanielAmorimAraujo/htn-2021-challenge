@@ -11,7 +11,6 @@ export interface PUrlButton {
 const SButton = styled(Button)`
   width: 128px;
   border-radius: 8px;
-  float: right;
   margin: 0 8px;
 `;
 
