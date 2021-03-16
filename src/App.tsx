@@ -1,7 +1,33 @@
-import React from "react";
+import React, { useState } from "react";
+
+import Header from "components/header/header";
+import config from "library/config.json";
 
 const App = (): React.ReactElement => {
-  return <></>;
+  const [authenticated, setAuthenticated] = useState(false);
+
+  const authenticate = (email: string, password: string) => {
+    if (email === config.USER_EMAIL && password === config.USER_PASSWORD) {
+      setAuthenticated(true);
+      return true;
+    }
+    return false;
+  };
+
+  const logout = () => {
+    setAuthenticated(false);
+  };
+
+  return (
+    <>
+      <Header
+        name={authenticated ? config.USER_FIRSTNAME : ""}
+        authenticated={authenticated}
+        authenticate={authenticate}
+        logout={logout}
+      />
+    </>
+  );
 };
 
 export default App;
