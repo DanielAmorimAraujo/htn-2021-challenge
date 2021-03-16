@@ -1,5 +1,8 @@
-export type TEventType = "workshop" | "activity" | "tech_talk";
-export type TPermission = "public" | "private";
+export const EventType = ["workshop", "activity", "tech_talk"] as const;
+export type TEventType = typeof EventType[number];
+
+export const Permission = ["public", "private"] as const;
+export type TPermission = typeof Permission[number];
 
 export type TSpeaker = {
   name: string;
