@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.js": "/htn-2021-challenge/static/js/main.a6565255.chunk.js",
-    "main.js.map": "/htn-2021-challenge/static/js/main.a6565255.chunk.js.map",
+    "main.js": "/htn-2021-challenge/static/js/main.3eb5f45d.chunk.js",
+    "main.js.map": "/htn-2021-challenge/static/js/main.3eb5f45d.chunk.js.map",
     "runtime-main.js": "/htn-2021-challenge/static/js/runtime-main.e8f000d5.js",
     "runtime-main.js.map": "/htn-2021-challenge/static/js/runtime-main.e8f000d5.js.map",
     "static/css/2.4c97ca4f.chunk.css": "/htn-2021-challenge/static/css/2.4c97ca4f.chunk.css",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.e8f000d5.js",
     "static/css/2.4c97ca4f.chunk.css",
     "static/js/2.4551457c.chunk.js",
-    "static/js/main.a6565255.chunk.js"
+    "static/js/main.3eb5f45d.chunk.js"
   ]
 }
