@@ -12,26 +12,42 @@ export default {
  * @returns the authenticated public storybook
  */
 export const AuthPublic = (): React.ReactElement => (
-  <EventCard event={techtalk} authenticated />
+  <EventCard
+    event={techtalk}
+    authenticated
+    setRelatedEvents={() => undefined}
+  />
 );
 
 /**
  * @returns the un-authenticated public storybook
  */
 export const UnAuthPublic = (): React.ReactElement => (
-  <EventCard event={techtalk} authenticated={false} />
+  <EventCard
+    event={techtalk}
+    authenticated={false}
+    setRelatedEvents={() => undefined}
+  />
 );
 
 /**
  * @returns the authenticated private storybook
  */
 export const AuthPrivate = (): React.ReactElement => (
-  <EventCard event={workshop} authenticated />
+  <EventCard
+    event={workshop}
+    authenticated
+    setRelatedEvents={() => undefined}
+  />
 );
 
 /**
  * @returns the un-authenticated private storybook
  */
 export const UnAuthPrivate = (): React.ReactElement => (
-  <EventCard event={workshop} authenticated={false} />
+  <EventCard
+    event={workshop}
+    authenticated={false}
+    setRelatedEvents={() => undefined}
+  />
 );

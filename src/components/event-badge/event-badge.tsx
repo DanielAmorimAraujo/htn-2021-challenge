@@ -7,11 +7,14 @@ import { TEventType } from "models/event";
 
 interface PEventBadge {
   eventType: TEventType;
+  onClick?: (eventType: TEventType) => void;
 }
 
 const SBadge = styled(Badge)`
   width: 80px;
   font-size: 12px;
+  cursor: ${(props) => (props.onClick ? "pointer" : "initial")};
+  user-select: none;
 `;
 
 /**
@@ -22,7 +25,7 @@ const SBadge = styled(Badge)`
  * @returns the EventBadge component
  */
 const EventBadge = (props: PEventBadge): React.ReactElement => {
-  const { eventType } = props;
+  const { eventType, onClick } = props;
 
   const colors = {
     workshop: "warning",
@@ -31,7 +34,13 @@ const EventBadge = (props: PEventBadge): React.ReactElement => {
   };
 
   return (
-    <SBadge variant={colors[eventType]} pill>
+    <SBadge
+      pill
+      variant={colors[eventType]}
+      onClick={() => {
+        if (onClick) onClick(eventType);
+      }}
+    >
       {eventType
         .split("_")
         .map((word) => word[0].toUpperCase() + word.substring(1))

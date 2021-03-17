@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
 import Header from "components/header/header";
+import EventList from "components/event-list/event-list";
 import config from "library/config.json";
 
 const App = (): React.ReactElement => {
@@ -26,6 +27,7 @@ const App = (): React.ReactElement => {
         authenticate={authenticate}
         logout={logout}
       />
+      <EventList authenticated={authenticated} />
     </>
   );
 };

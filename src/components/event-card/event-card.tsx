@@ -3,6 +3,7 @@ import React from "react";
 import Card from "react-bootstrap/Card";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import Button from "react-bootstrap/Button";
 import styled from "styled-components";
 import { DateTime } from "luxon";
 
@@ -14,6 +15,7 @@ import { Event } from "models/event";
 export interface PEventCard {
   event: Event;
   authenticated: boolean;
+  setRelatedEvents: (event?: Event) => void;
 }
 
 const SCardWrap = styled.div`
@@ -51,9 +53,7 @@ const SSpeakerWrap = styled.span`
  * @returns the EventCard component
  */
 const EventCard = (props: PEventCard): React.ReactElement => {
-  const { event, authenticated } = props;
-
-  if (event.permission === "private" && !authenticated) return <></>;
+  const { event, authenticated, setRelatedEvents } = props;
 
   const startDate = DateTime.fromMillis(event.start_time);
   const endDate = DateTime.fromMillis(event.end_time);
@@ -87,14 +87,34 @@ const EventCard = (props: PEventCard): React.ReactElement => {
         </Row>
         <SCardBody>{event.description}</SCardBody>
       </SCardWrap>
-      {event.speakers.length > 0 && (
+      {event.speakers.length + event.related_events.length > 0 && (
         <Card.Footer>
-          {`Speaker${event.speakers.length > 1 ? "s" : ""}: `}
-          {event.speakers.map((s) => (
-            <SSpeakerWrap>
-              <Speaker speaker={s} />
-            </SSpeakerWrap>
-          ))}
+          <Row>
+            <Col>
+              {event.speakers.length > 0 && (
+                <>
+                  Speaker{event.speakers.length > 1 ? "s" : ""}:{" "}
+                  {event.speakers.map((s) => (
+                    <SSpeakerWrap>
+                      <Speaker speaker={s} />
+                    </SSpeakerWrap>
+                  ))}
+                </>
+              )}
+            </Col>
+            <Col sm="auto" xs={12}>
+              {event.related_events.length > 0 && (
+                <Button
+                  variant="link"
+                  onClick={() => {
+                    setRelatedEvents(event);
+                  }}
+                >
+                  Related Events
+                </Button>
+              )}
+            </Col>
+          </Row>
         </Card.Footer>
       )}
     </Card>
@@ -102,23 +122,3 @@ const EventCard = (props: PEventCard): React.ReactElement => {
 };
 
 export default EventCard;
-
-/*
-
-name
-event_type
-start_time
-end_time
-
-
-description
-speakers
-  name
-  profile pic
-
-public_url
-private_url
-related_events
-  [list of ids]
-
-*/
