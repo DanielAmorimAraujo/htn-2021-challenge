@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.js": "/htn-2021-challenge/static/js/main.a6565255.chunk.js",
+    "main.js.map": "/htn-2021-challenge/static/js/main.a6565255.chunk.js.map",
+    "runtime-main.js": "/htn-2021-challenge/static/js/runtime-main.e8f000d5.js",
+    "runtime-main.js.map": "/htn-2021-challenge/static/js/runtime-main.e8f000d5.js.map",
+    "static/css/2.4c97ca4f.chunk.css": "/htn-2021-challenge/static/css/2.4c97ca4f.chunk.css",
+    "static/js/2.4551457c.chunk.js": "/htn-2021-challenge/static/js/2.4551457c.chunk.js",
+    "static/js/2.4551457c.chunk.js.map": "/htn-2021-challenge/static/js/2.4551457c.chunk.js.map",
+    "static/js/3.55900279.chunk.js": "/htn-2021-challenge/static/js/3.55900279.chunk.js",
+    "static/js/3.55900279.chunk.js.map": "/htn-2021-challenge/static/js/3.55900279.chunk.js.map",
+    "index.html": "/htn-2021-challenge/index.html",
+    "static/css/2.4c97ca4f.chunk.css.map": "/htn-2021-challenge/static/css/2.4c97ca4f.chunk.css.map",
+    "static/js/2.4551457c.chunk.js.LICENSE.txt": "/htn-2021-challenge/static/js/2.4551457c.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.e8f000d5.js",
+    "static/css/2.4c97ca4f.chunk.css",
+    "static/js/2.4551457c.chunk.js",
+    "static/js/main.a6565255.chunk.js"
+  ]
+}
