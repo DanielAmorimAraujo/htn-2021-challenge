@@ -23,7 +23,7 @@ const SEventCardWrap = styled.div`
   padding: 8px 16px;
 `;
 
-const SNoResults = styled.h1`
+const SNoResults = styled.h2`
   padding: 32px;
   opacity: 0.75;
 `;
@@ -45,19 +45,6 @@ const EventList = (props: PEventList): React.ReactElement => {
     eventTypes: [...EventType],
   });
 
-  const setEventTypes = (eventType: TEventType) => {
-    setFilter({
-      ...filter,
-      eventTypes: filter.eventTypes.includes(eventType)
-        ? filter.eventTypes.filter((et) => et !== eventType)
-        : filter.eventTypes.concat(eventType),
-    });
-  };
-
-  const setRelatedEvents = (event?: Event) => {
-    setFilter({ ...filter, relatedEvents: event });
-  };
-
   useEffect(() => {
     EventApi.getAll().then((res: Event[]) => {
       setEvents(
@@ -71,6 +58,19 @@ const EventList = (props: PEventList): React.ReactElement => {
       );
     });
   }, []);
+
+  const setEventTypes = (eventType: TEventType) => {
+    setFilter({
+      ...filter,
+      eventTypes: filter.eventTypes.includes(eventType)
+        ? filter.eventTypes.filter((et) => et !== eventType)
+        : filter.eventTypes.concat(eventType),
+    });
+  };
+
+  const setRelatedEvents = (event?: Event) => {
+    setFilter({ ...filter, relatedEvents: event });
+  };
 
   const filteredEvents = events?.filter(
     (event) =>
@@ -100,7 +100,7 @@ const EventList = (props: PEventList): React.ReactElement => {
           </SEventCardWrap>
         ))
       ) : (
-        <SNoResults>No Results Found :(</SNoResults>
+        <SNoResults>No Events Found :(</SNoResults>
       )}
     </SEventListWrap>
   );
